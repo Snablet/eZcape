@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 28
-  productGUID: e0c4b2fadd2ee6f43a052962b9891ad5
+  productGUID: 698e0da4bca348b4bb5cecc38e6d2b22
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: 3dproject1
+  productName: eZcapeUnity
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -821,8 +821,7 @@ PlayerSettings:
   webGLCloseOnQuit: 0
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
-  scriptingDefineSymbols:
-    Standalone: STARTER_ASSETS_PACKAGES_CHECKED
+  scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
@@ -843,14 +842,14 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: 3dproject1
+  metroPackageName: eZcapeUnity
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: 3dproject1
+  metroApplicationDescription: eZcapeUnity
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -921,10 +920,10 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: eaaa2f08-02aa-4c39-a95b-3f164e83983f
+  cloudProjectId: 170ce500-a8a4-45a0-873e-a3e5f902bf51
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 3dproject1
+  projectName: eZcapeUnity
   organizationId: azontocuzo
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

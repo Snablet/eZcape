@@ -15,6 +15,8 @@ public class PlayerControl2 : MonoBehaviour
     [SerializeField] float dodgeSpeed = 30;
     [SerializeField] float rotateSpeed = 15;
     [SerializeField] int gravity = 25;
+    // speed multiplier for powerups
+    float speedMultiplier = 1f;
 
     //for ground detection
     [Header("Ground Detection")]
@@ -95,21 +97,18 @@ public class PlayerControl2 : MonoBehaviour
         else { moveAmount = 0f; }
             anim.SetFloat("moveAmount", moveAmount, 0.1f, Time.deltaTime);
     }
-    void PlayerMovement() { 
+void PlayerMovement() { 
         
         velocityY -= Time.deltaTime * gravity;
         velocityY = Mathf.Clamp(velocityY, -10, 10);
         Vector3 fallVelocity = Vector3.up * velocityY;
        
-        if (Input.GetKey(KeyCode.LeftShift)) { Vector3 velocity = (direction * sprintSpeed) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
-        else if(!Input.GetKey(KeyCode.LeftShift)&&!isDodging) { Vector3 velocity = (direction * moveSpeed) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
-        else if(isDodging) { Vector3 velocity = (direction * dodgeSpeed) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
+        if (Input.GetKey(KeyCode.LeftShift)) { Vector3 velocity = (direction * sprintSpeed * speedMultiplier) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
+        else if(!Input.GetKey(KeyCode.LeftShift)&&!isDodging) { Vector3 velocity = (direction * moveSpeed * speedMultiplier) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
+        else if(isDodging) { Vector3 velocity = (direction * dodgeSpeed * speedMultiplier) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
         //else { Vector3 velocity = (direction * moveSpeed) + fallVelocity; CharacterControl.Move(velocity * Time.deltaTime); }
         
-            
-
-        
-    }
+}
     void PlayerRotation() { if (direction.magnitude == 0) return;
 
         //lower rotation speed while rolling
@@ -121,4 +120,9 @@ public class PlayerControl2 : MonoBehaviour
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(direction), rs * Time.deltaTime);
     }
+    public void AddSpeedMultiplier(float newMultiplier)
+{
+    speedMultiplier = speedMultiplier + newMultiplier;
 }
+}
+

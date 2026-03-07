@@ -13,5 +13,5 @@ public class damageScript:MonoBehaviour
             enemy.TakeDamage(damage);
         }
     }
-
+    
 }

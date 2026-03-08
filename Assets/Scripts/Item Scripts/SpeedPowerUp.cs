@@ -22,7 +22,7 @@ public class SpeedPowerUp : MonoBehaviour
         {
             playerControl.AddSpeedMultiplier(0.2f);
         }
-
+        
         Destroy(gameObject);
     }
 }

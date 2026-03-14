@@ -27,7 +27,7 @@ public class EnemyAI : MonoBehaviour
         agent.autoBraking = false;
 
         if (player == null)
-            player = GameObject.FindGameObjectWithTag("Player").transform;
+            player = GameObject.FindGameObjectWithTag("Survivalist").transform;
     }
 
     void Update()
@@ -45,7 +45,7 @@ public class EnemyAI : MonoBehaviour
             if (distanceToPlayer <= attackRange)
             {
                 //this agent.reset is so the zombie stop moving when attack
-                //agent.ResetPath();
+                agent.ResetPath();
                 // Time to attack!
                 if (Time.time > lastAttackTime + attackCooldown)
                 {
@@ -58,16 +58,29 @@ public class EnemyAI : MonoBehaviour
         {
             agent.ResetPath();
         }
+        RotateTowardsPlayer();
         //This is for animation parameters/ smooth transitions(0.1f,deltaTime)
-        //float zMoveAmount = agent.velocity.magnitude;
-        //animator.SetFloat("zMoveAmount", zMoveAmount, 0.1f, Time.deltaTime);
+        float zMoveAmount = agent.velocity.magnitude;
+        animator.SetFloat("zMoveAmount", zMoveAmount, 0.1f, Time.deltaTime);
+    }
+    void RotateTowardsPlayer()
+    {
+        Vector3 direction = (player.position - transform.position).normalized;
+        direction.y = 0; // keep zombie upright
+        if (direction.magnitude > 0.1f)
+        {
+            float rotateSpeed = 5f; // change for faster/slower rotation
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, direction, rotateSpeed * Time.deltaTime, 0f);
+            transform.rotation = Quaternion.LookRotation(newDir);
+        }
     }
 
     void Attack()
     {
         Debug.Log("Enemy attacks!");
         //this is for zom attack animation
-        //animator.SetTrigger("zomAttack");
+        animator.ResetTrigger("zomAttack");
+        animator.SetTrigger("zomAttack");
         // Find player and damage them
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth != null)

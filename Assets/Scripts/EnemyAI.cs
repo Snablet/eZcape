@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
+    private Animator animator;//for animator
     [Header("References")]
     public Transform player;
     private NavMeshAgent agent;
@@ -19,6 +20,7 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponent<Animator>();//for zom animations
         agent = GetComponent<NavMeshAgent>();
         agent.speed = moveSpeed;
         agent.stoppingDistance = 0.5f;//attackRange * 0.8f;  // Stop a bit before attack range
@@ -42,6 +44,8 @@ public class EnemyAI : MonoBehaviour
             // Check if close enough to attack
             if (distanceToPlayer <= attackRange)
             {
+                //this agent.reset is so the zombie stop moving when attack
+                //agent.ResetPath();
                 // Time to attack!
                 if (Time.time > lastAttackTime + attackCooldown)
                 {
@@ -54,12 +58,16 @@ public class EnemyAI : MonoBehaviour
         {
             agent.ResetPath();
         }
+        //This is for animation parameters/ smooth transitions(0.1f,deltaTime)
+        //float zMoveAmount = agent.velocity.magnitude;
+        //animator.SetFloat("zMoveAmount", zMoveAmount, 0.1f, Time.deltaTime);
     }
 
     void Attack()
     {
         Debug.Log("Enemy attacks!");
-
+        //this is for zom attack animation
+        //animator.SetTrigger("zomAttack");
         // Find player and damage them
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth != null)

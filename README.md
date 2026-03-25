@@ -4,7 +4,7 @@
 
 ---
 
-![Game Banner Placeholder]()
+![Game Banner Placeholder](Background_Menu.png)
 
 ---
 

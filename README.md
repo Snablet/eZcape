@@ -179,10 +179,10 @@ As the **Sound Engineer**, I've designed the audio to reflect the game's psychol
 - [x] Game pitch & concept finalized
 - [x] Core mechanics documented
 - [x] Main menu music composed
-- [ ] Prototype vertical slice
+- [x] Prototype vertical slice
 - [x] First floor implementation
 - [ ] Syringe system & consciousness mechanics
-- [ ] Voice recording sessions
+- [x] Voice recording sessions
 - [ ] Boss encounter design
 - [ ] Alpha build
 - [ ] Playtesting & balancing

@@ -337,14 +337,14 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 26cef23cd085833c1b9763c96cbe4fa0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.027
+  m_Volume: 0.193
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
@@ -1686,14 +1686,14 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 879a4bc48d1405850a4d63047036781a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.065
+  m_Volume: 0.257
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 123
-  DopplerLevel: 2.75
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 50
   Pan2D: 0
@@ -4518,17 +4518,17 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 60a5406bbf48df7b48a9b289c18fc253, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.102
+  m_Volume: 0.262
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1.94
+  DopplerLevel: 0
   MinDistance: 1
   MaxDistance: 500
-  Pan2D: 0.33
+  Pan2D: -0
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
@@ -4577,7 +4577,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.13333334
+      value: 0.31111112
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4592,7 +4592,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.606
+      value: 0.506
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -4942,7 +4942,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ee7bc729886d6bd7b98934c8239b9747, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.674
+  m_Volume: 0.781
   m_Pitch: 1
   Loop: 0
   Mute: 0

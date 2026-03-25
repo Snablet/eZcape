@@ -17,7 +17,7 @@ public class EnemyAI : MonoBehaviour
     public int damageAmount = 10;
     public float attackCooldown = 1f;  // Time between attacks
     private float lastAttackTime = 0f;
-
+    public bool isStagger;
     void Start()
     {
         animator = GetComponent<Animator>();//for zom animations
@@ -32,6 +32,7 @@ public class EnemyAI : MonoBehaviour
 
     void Update()
     {
+        if (isStagger) return;
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);

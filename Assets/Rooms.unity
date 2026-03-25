@@ -243,6 +243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShirtlessZombie_FREE (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -318,6 +322,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 79252362}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 79252370}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 79252371}
   m_SourcePrefab: {fileID: 100100000, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
 --- !u!1 &79252361 stripped
 GameObject:
@@ -501,6 +511,42 @@ MonoBehaviour:
   moveSpeed: 5
   damageAmount: 10
   attackCooldown: 1
+  isStagger: 0
+--- !u!65 &79252370
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79252361}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.6632351, z: 1}
+  m_Center: {x: 0, y: 0.9049316, z: 0}
+--- !u!114 &79252371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79252361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af48438892ca7e443ba419f36c299131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
+  health: 100
+  staggerDuration: 1.33
 --- !u!4 &174372574 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4856336461430574, guid: df2f14ece3a3a0847aad4f1407b39c50, type: 3}
@@ -731,6 +777,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6766536238432138802, guid: 29275473dc42c1a499187925872e54cb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2091316691}
+    - targetCorrespondingSourceObject: {fileID: 6766536238432138802, guid: 29275473dc42c1a499187925872e54cb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2091316693}
   m_SourcePrefab: {fileID: 100100000, guid: 29275473dc42c1a499187925872e54cb, type: 3}
 --- !u!1 &236749029
 GameObject:
@@ -1624,6 +1673,7 @@ MonoBehaviour:
   moveSpeed: 5
   damageAmount: 10
   attackCooldown: 1
+  isStagger: 0
 --- !u!195 &532458541
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1669,7 +1719,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1770,6 +1820,41 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &532458547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532458535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af48438892ca7e443ba419f36c299131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
+  health: 100
+  staggerDuration: 1.27
+--- !u!65 &532458551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532458535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.99385834, y: 1.7418653, z: 0.5125748}
+  m_Center: {x: 0.003071626, y: 0.83563256, z: 0.041844197}
 --- !u!1001 &556820378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2414,6 +2499,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShirtlessZombie_FREE
       objectReference: {fileID: 0}
+    - target: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -2489,6 +2578,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 532458546}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 532458547}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 532458551}
   m_SourcePrefab: {fileID: 100100000, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
 --- !u!1001 &1038417005
 PrefabInstance:
@@ -4136,10 +4231,10 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Size: {x: 0.22912751, y: 0.61284816, z: 0.982846}
-  m_Center: {x: -0.0037321104, y: 1.1949127, z: 0.062916085}
+  m_Size: {x: 0.22912753, y: 1.1259046, z: 0.982846}
+  m_Center: {x: -0.0037293336, y: 0.93838596, z: 0.06291789}
 --- !u!114 &1781369978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4152,7 +4247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e3dec35a0d9c4a45b9b3ec36fd51ad7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::damageScript
-  damage: 0
+  damage: 10
 --- !u!4 &1781369979 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1661842575929467193, guid: 61e94d918c1aa4e4e8447af7d1be97f1, type: 3}
@@ -4424,6 +4519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShirtlessZombie_FREE (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      propertyPath: m_TagString
+      value: enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 400118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.2
@@ -4499,6 +4598,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2053764920}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053764928}
+    - targetCorrespondingSourceObject: {fileID: 100118, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2053764929}
   m_SourcePrefab: {fileID: 100100000, guid: e2c1c24aec0aaa94eb4cb7a2aae271a0, type: 3}
 --- !u!1 &2053764919 stripped
 GameObject:
@@ -4625,7 +4730,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -4682,6 +4787,42 @@ MonoBehaviour:
   moveSpeed: 5
   damageAmount: 10
   attackCooldown: 1
+  isStagger: 0
+--- !u!65 &2053764928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053764919}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.6769758, z: 1}
+  m_Center: {x: 0, y: 0.8888904, z: 0}
+--- !u!114 &2053764929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053764919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af48438892ca7e443ba419f36c299131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::enemyHealth
+  health: 100
+  staggerDuration: 1.22
 --- !u!1 &2078473499
 GameObject:
   m_ObjectHideFlags: 0
@@ -5026,6 +5167,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2091316693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2091316681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e3dec35a0d9c4a45b9b3ec36fd51ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::damageScript
+  damage: 10
 --- !u!1 &2099315001
 GameObject:
   m_ObjectHideFlags: 0

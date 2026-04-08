@@ -5,7 +5,7 @@ public class GameOverScreen : MonoBehaviour
 {
     public void RestartButton()
     {
-        SceneManager.LoadScene("Wowy");
+        SceneManager.LoadScene("Wowyy");
     }
 
     public void MainMenuButton()

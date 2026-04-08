@@ -10,7 +10,7 @@
 
 ## 📖 Overview
 
-**eZcape** is a top-down RPG roguelike with survival horror elements. Set within the twisted corridors of a hospital-like laboratory, you must navigate floor by floor, upgrade your abilities, and make choices that determine your fate. Your brother—a brilliant but morally broken scientist—has injected you with a prototype zombie virus as part of a forbidden life experiment. Now, the facility has collapsed into chaos. Every scientist has turned. Your mind is fading. And the clock is ticking.
+**eZcape** is a RPG roguelike with survival horror elements. Set within the twisted corridors of a hospital-like laboratory, you must navigate floor by floor, upgrade your abilities, and make choices that determine your fate. Your brother—a brilliant but morally broken scientist—has injected you with a prototype zombie virus as part of a forbidden life experiment. Now, the facility has collapsed into chaos. Every scientist has turned. Your mind is fading. And the clock is ticking.
 
 ---
 

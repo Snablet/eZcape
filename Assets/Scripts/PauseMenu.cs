@@ -11,14 +11,14 @@ public class PauseMenu : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             container.SetActive(true);
-            Time.timeScale = 0;
+            Time.timeScale = 0.0f;
         }
     }
 
     public void ResumeButton()
     {
         container.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1.0f;
     }
     
     public void MainMenuButton()
